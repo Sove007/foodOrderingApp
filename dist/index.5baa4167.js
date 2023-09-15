@@ -43588,13 +43588,15 @@ const Cart = ()=>{
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "flex",
-                children: cartItems.map((items)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _foodItemsDefault.default), {
-                        ...items?.card?.info
-                    }, items?.card?.info.id, false, {
-                        fileName: "src/components/Cart.js",
-                        lineNumber: 16,
-                        columnNumber: 33
-                    }, undefined))
+                children: cartItems.map((items)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _foodItemsDefault.default), {
+                            ...items?.card?.info
+                        }, items?.card?.info.id, false, {
+                            fileName: "src/components/Cart.js",
+                            lineNumber: 18,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false))
             }, void 0, false, {
                 fileName: "src/components/Cart.js",
                 lineNumber: 15,
@@ -43630,7 +43632,16 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _contant = require("../../Contant");
+var _reactRedux = require("react-redux");
+var _cartSlice = require("../../utils/cartSlice");
+var _s = $RefreshSig$();
 const FoodItems = ({ name, price, defaultPrice, imageId, description })=>{
+    _s();
+    const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
+    const dispatch = (0, _reactRedux.useDispatch)();
+    const handleRemoveItem = ()=>{
+        dispatch((0, _cartSlice.removeItem)(cartItems));
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "w-[200px] p-3 m-5 shadow-lg bg-pink-50",
         children: [
@@ -43638,7 +43649,7 @@ const FoodItems = ({ name, price, defaultPrice, imageId, description })=>{
                 children: name
             }, void 0, false, {
                 fileName: "src/components/FoodItems.jsx",
-                lineNumber: 10,
+                lineNumber: 17,
                 columnNumber: 7
             }, undefined),
             "₹ ",
@@ -43648,7 +43659,7 @@ const FoodItems = ({ name, price, defaultPrice, imageId, description })=>{
                 src: (0, _contant.IMG_CON_URL) + imageId
             }, void 0, false, {
                 fileName: "src/components/FoodItems.jsx",
-                lineNumber: 12,
+                lineNumber: 19,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -43656,16 +43667,31 @@ const FoodItems = ({ name, price, defaultPrice, imageId, description })=>{
                 children: description.slice(0, 60)
             }, void 0, false, {
                 fileName: "src/components/FoodItems.jsx",
-                lineNumber: 13,
+                lineNumber: 20,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                className: "bg-red-200 p-2 m-2 font-semibold",
+                onClick: handleRemoveItem,
+                children: "remove"
+            }, void 0, false, {
+                fileName: "src/components/FoodItems.jsx",
+                lineNumber: 21,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/FoodItems.jsx",
-        lineNumber: 9,
+        lineNumber: 16,
         columnNumber: 10
     }, undefined);
 };
+_s(FoodItems, "ClsVU7OzYQ50hVvtHIih2dVFL+s=", false, function() {
+    return [
+        (0, _reactRedux.useSelector),
+        (0, _reactRedux.useDispatch)
+    ];
+});
 _c = FoodItems;
 exports.default = FoodItems;
 var _c;
@@ -43676,6 +43702,6 @@ $RefreshReg$(_c, "FoodItems");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../Contant":"iiNTq"}]},["hF8lp","1xC6H","igcvL"], "igcvL", "parcelRequire21de")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../Contant":"iiNTq","react-redux":"bdVon","../../utils/cartSlice":"1D8lC"}]},["hF8lp","1xC6H","igcvL"], "igcvL", "parcelRequire21de")
 
 //# sourceMappingURL=index.5baa4167.js.map
