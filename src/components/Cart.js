@@ -18,7 +18,7 @@ const Cart = () => {
     <>
       <h1 className="font-bold text-3xl">Cart Items - {cartItems.length}</h1>
       <button
-        className="bg-green-100 p-2 m-2 font-semibold"
+        className="bg-green-100 p-2 m-2 font-semibold rounded-lg"
         onClick={() => handleClearCart()}
       >
         clearcart

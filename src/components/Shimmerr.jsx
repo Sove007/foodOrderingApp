@@ -9,7 +9,7 @@ const Shimmerr = () => {
 
         {Array(8).fill('').map((e, index)=>
         <div key={index}>
-         <div className="w-[200px] p-3 m-5 shadow-lg bg-pink-50 animate-pulse">
+         <div className="w-[200px] p-3 m-5 shadow-lg b animate-pulse">
   <div className="bg-gray-200 h-6 w-1/2 mb-2 rounded"></div>
   <img  className="animate-none" />
   <h3 className="font-bold text-xl mb-2 animate-none"></h3>

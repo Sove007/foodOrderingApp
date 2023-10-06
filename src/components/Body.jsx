@@ -41,17 +41,16 @@ const Body = ({}) => {
     <Shimmerr />
   ) : (
     <>
-      <div className="p-4 bg-white my-5">
-      <div className="rounded-full border-gray-200 ">
+      <div className="p-2 ml-18 mt-3 flex  ">
         <input
           type="text"
-          className="focus:"
+          className="border border-gray-400 rounded-l-full p-2 "
           value={searchtext}
           placeholder="Search for the restaurants and food"
           onChange={(e) => setSearchText(e.target.value)}
         />
         <button
-          className="p-2 m-3 hover:text-orange-300 rounded-md"
+          className="border border-gray-400 rounded-r-full p-2 hover:text-orange-300"
           onClick={() => {
             const data = handleSearch(searchtext, allRestaurant);
             setFilteredRestaurant(data);
@@ -60,11 +59,10 @@ const Body = ({}) => {
         <SlMagnifier/>
         </button>
         </div>
-     
-      </div>
 
       <div>
-        <div className="flex flex-wrap container mx-auto">
+        <h1 className=" font-bold text-2xl text-gray-600 text-center">Restaurants with online food delivery in West Delhi</h1>
+        <div className="flex flex-wrap container mx-auto ml-28">
         
           {filterdRestaurant.map((val) => {
             return (
