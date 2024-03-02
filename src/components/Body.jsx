@@ -10,21 +10,23 @@ const Body = ({}) => {
   const [allRestaurant, setAllRestaurant] = useState([]);
   const [filterdRestaurant, setFilteredRestaurant] = useState([]);
   const [searchtext, setSearchText] = useState("");
-
+  
   useEffect(() => {
     getResturants();
   }, []);
-
+  
   async function getResturants() {
     const data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6295061&lng=77.030152&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6295061&lng=77.030152&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.629636&lng=77.030748&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
+    console.log(json);
     setAllRestaurant(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurant(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   }
   const isOnline = useOnline();
@@ -64,7 +66,7 @@ const Body = ({}) => {
         <h1 className=" font-bold text-2xl text-gray-600 text-center">Restaurants with online food delivery in West Delhi</h1>
         <div className="flex flex-wrap container mx-auto ml-28">
         
-          {filterdRestaurant.map((val) => {
+          {filterdRestaurant?.map((val) => {
             return (
               <Link to={"/resturent/" + val?.info?.id} key={val?.info?.id}>
                 <RestaurantCard {...val?.info}  />

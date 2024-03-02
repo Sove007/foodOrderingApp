@@ -11,7 +11,7 @@ const FoodItems = ({ name, price, defaultPrice, imageId, description }) => {
       <h1>{name}</h1>
        ₹ {price / 100 || defaultPrice / 100}
       <img className="items-end" src={IMG_CON_URL + imageId} />
-      <p className="text-sm font-thin">{description.slice(0, 60)}</p>
+      <p className="text-sm font-thin">{description?.slice(0, 60)}</p>
       <button className="bg-red-200 p-2 m-2 font-semibold rounded-lg ">remove</button>
 
     </div>

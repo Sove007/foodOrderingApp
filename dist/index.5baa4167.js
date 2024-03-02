@@ -38925,23 +38925,25 @@ const Body = ({})=>{
         getResturants();
     }, []);
     async function getResturants() {
-        const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6295061&lng=77.030152&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch(// "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6295061&lng=77.030152&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.629636&lng=77.030748&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
-        setAllRestaurant(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredRestaurant(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        console.log(json);
+        setAllRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
     const isOnline = (0, _useOnlineDefault.default)();
     if (!isOnline) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
         children: "\uD83D\uDD34Offline! please check your internet connection"
     }, void 0, false, {
         fileName: "src/components/Body.jsx",
-        lineNumber: 23,
+        lineNumber: 26,
         columnNumber: 12
     }, undefined);
     // if (filterdRestaurant?.length === 0) return <h3>No Items Found!!!</h3>;
     return allRestaurant?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerrDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.jsx",
-        lineNumber: 29,
+        lineNumber: 32,
         columnNumber: 40
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
@@ -38956,7 +38958,7 @@ const Body = ({})=>{
                         onChange: (e)=>setSearchText(e.target.value)
                     }, void 0, false, {
                         fileName: "src/components/Body.jsx",
-                        lineNumber: 31,
+                        lineNumber: 34,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -38967,18 +38969,18 @@ const Body = ({})=>{
                         },
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sl.SlMagnifier), {}, void 0, false, {
                             fileName: "src/components/Body.jsx",
-                            lineNumber: 36,
+                            lineNumber: 39,
                             columnNumber: 9
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/Body.jsx",
-                        lineNumber: 32,
+                        lineNumber: 35,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.jsx",
-                lineNumber: 30,
+                lineNumber: 33,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -38988,36 +38990,36 @@ const Body = ({})=>{
                         children: "Restaurants with online food delivery in West Delhi"
                     }, void 0, false, {
                         fileName: "src/components/Body.jsx",
-                        lineNumber: 41,
+                        lineNumber: 44,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "flex flex-wrap container mx-auto ml-28",
-                        children: filterdRestaurant.map((val)=>{
+                        children: filterdRestaurant?.map((val)=>{
                             return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                 to: "/resturent/" + val?.info?.id,
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
                                     ...val?.info
                                 }, void 0, false, {
                                     fileName: "src/components/Body.jsx",
-                                    lineNumber: 46,
+                                    lineNumber: 49,
                                     columnNumber: 17
                                 }, undefined)
                             }, val?.info?.id, false, {
                                 fileName: "src/components/Body.jsx",
-                                lineNumber: 45,
+                                lineNumber: 48,
                                 columnNumber: 18
                             }, undefined);
                         })
                     }, void 0, false, {
                         fileName: "src/components/Body.jsx",
-                        lineNumber: 42,
+                        lineNumber: 45,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.jsx",
-                lineNumber: 40,
+                lineNumber: 43,
                 columnNumber: 7
             }, undefined)
         ]
@@ -39099,7 +39101,7 @@ const RestaurantCard = ({ name, cuisines, cloudinaryImageId, areaName, avgRating
                     }, void 0, true, {
                         fileName: "src/components/RestaurantCard.jsx",
                         lineNumber: 16,
-                        columnNumber: 7
+                        columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
@@ -39158,30 +39160,30 @@ const Shimmerr = ()=>{
                             className: "bg-gray-200 h-6 w-1/2 mb-2 rounded"
                         }, void 0, false, {
                             fileName: "src/components/Shimmerr.jsx",
-                            lineNumber: 9,
-                            columnNumber: 3
+                            lineNumber: 7,
+                            columnNumber: 15
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                             className: "animate-none"
                         }, void 0, false, {
                             fileName: "src/components/Shimmerr.jsx",
-                            lineNumber: 10,
-                            columnNumber: 3
+                            lineNumber: 8,
+                            columnNumber: 15
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                             className: "font-bold text-xl mb-2 animate-none"
                         }, void 0, false, {
                             fileName: "src/components/Shimmerr.jsx",
-                            lineNumber: 11,
-                            columnNumber: 3
+                            lineNumber: 9,
+                            columnNumber: 15
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
                             className: "mb-2 animate-none",
                             children: "⭐"
                         }, void 0, false, {
                             fileName: "src/components/Shimmerr.jsx",
-                            lineNumber: 12,
-                            columnNumber: 3
+                            lineNumber: 10,
+                            columnNumber: 15
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                             children: [
@@ -39189,46 +39191,46 @@ const Shimmerr = ()=>{
                                     className: "bg-gray-200 h-4 w-1/4 mb-2 rounded animate-none"
                                 }, void 0, false, {
                                     fileName: "src/components/Shimmerr.jsx",
-                                    lineNumber: 14,
-                                    columnNumber: 5
+                                    lineNumber: 12,
+                                    columnNumber: 17
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                     className: "bg-gray-200 h-4 w-3/4 mb-2 rounded animate-none"
                                 }, void 0, false, {
                                     fileName: "src/components/Shimmerr.jsx",
-                                    lineNumber: 16,
-                                    columnNumber: 5
+                                    lineNumber: 14,
+                                    columnNumber: 17
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/Shimmerr.jsx",
-                            lineNumber: 13,
-                            columnNumber: 3
+                            lineNumber: 11,
+                            columnNumber: 15
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                             className: "mb-2 animate-none"
                         }, void 0, false, {
                             fileName: "src/components/Shimmerr.jsx",
-                            lineNumber: 18,
-                            columnNumber: 3
+                            lineNumber: 16,
+                            columnNumber: 15
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
                             className: "p-2 font-bold mb-2 animate-none"
                         }, void 0, false, {
                             fileName: "src/components/Shimmerr.jsx",
-                            lineNumber: 20,
-                            columnNumber: 3
+                            lineNumber: 17,
+                            columnNumber: 15
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/Shimmerr.jsx",
-                    lineNumber: 8,
-                    columnNumber: 10
+                    lineNumber: 6,
+                    columnNumber: 13
                 }, undefined)
             }, index, false, {
                 fileName: "src/components/Shimmerr.jsx",
-                lineNumber: 7,
-                columnNumber: 46
+                lineNumber: 5,
+                columnNumber: 44
             }, undefined))
     }, void 0, false, {
         fileName: "src/components/Shimmerr.jsx",
@@ -39569,6 +39571,7 @@ const useResturant = (id)=>{
         const data = await fetch((0, _contant.FETCH_URL_MENU) + id);
         const json = await data.json();
         setRestaurant(json?.data);
+        console.log(json);
     }
     return resturent;
 };
@@ -43655,8 +43658,8 @@ const Cart = ()=>{
                             ...items?.card?.info
                         }, items?.card?.info.id, false, {
                             fileName: "src/components/Cart.js",
-                            lineNumber: 18,
-                            columnNumber: 11
+                            lineNumber: 17,
+                            columnNumber: 13
                         }, undefined)
                     }, void 0, false))
             }, void 0, false, {
@@ -43719,7 +43722,7 @@ const FoodItems = ({ name, price, defaultPrice, imageId, description })=>{
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                 className: "text-sm font-thin",
-                children: description.slice(0, 60)
+                children: description?.slice(0, 60)
             }, void 0, false, {
                 fileName: "src/components/FoodItems.jsx",
                 lineNumber: 15,
