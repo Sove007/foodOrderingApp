@@ -73,7 +73,7 @@ const Header = () => {
           >
             Sign up
           </button>
-        )}
+        )},
         {isLogedIn ? (
           <button
             className=" bg-black text-white hover:text-orange-300 py-2 px-5  font-medium"

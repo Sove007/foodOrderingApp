@@ -16,18 +16,26 @@ const Body = ({}) => {
   }, []);
   
   async function getResturants() {
-    const data = await fetch(
-      // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6295061&lng=77.030152&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.629636&lng=77.030748&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
-    const json = await data.json();
-    console.log(json);
-    setAllRestaurant(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredRestaurant(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    try {
+      const data = await fetch(
+        // "https://proxy.cors.sh/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6295061&lng=77.030152&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        // "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.629636&lng=77.030748&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        // "https://corsproxy.org/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.629636&lng=77.030748&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.629584&lng=77.030271&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      );
+      const json = await data.json();
+      console.log(json);
+      setAllRestaurant(
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      );
+      setFilteredRestaurant(
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      );
+      
+    } catch (error) {
+      console.log("Error fetching data:" , error);
+      
+    }
   }
   const isOnline = useOnline();
   if (!isOnline) {

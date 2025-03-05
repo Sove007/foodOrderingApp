@@ -17,30 +17,31 @@ const RestaurantMenu = () => {
   const addFooditem = (item) => {
     dispatch(addItem(item));
   };
-
+console.log(restaurant?.cards[2]?.card?.card.info);
   return !restaurant ? (
     <Shimmerr />
   ) : (
     <div className="flex items-center justify-center">
       <div className="w-1/3 m-4">
-        <h1>{restaurant?.cards[0]?.card?.card.info.name}</h1>
+        <h1>{restaurant?.cards[2]?.card?.card.info.name}</h1>
+        
         <img
           src={
             IMG_CON_URL +
-            restaurant?.cards[0]?.card?.card?.info?.cloudinaryImageId
+            restaurant?.cards[2]?.card?.card?.info?.cloudinaryImageId
           }
-          alt={restaurant?.cards[0]?.card?.card.info.name}
+          alt={restaurant?.cards[2]?.card?.card.info.name}
           className=""
         />
-        <h3>{restaurant?.cards[0]?.card?.card?.info?.areaName}</h3>
-        <h3>{restaurant?.cards[0]?.card?.card?.info?.city}</h3>
-        <h3>{restaurant?.cards[0]?.card?.card?.info?.avgRating}⭐</h3>
-        <h3>{restaurant?.cards[0]?.card?.card?.info?.costForTwoMessage}</h3>
+        <h3>{restaurant?.cards[2]?.card?.card?.info?.areaName}</h3>
+        <h3>{restaurant?.cards[2]?.card?.card?.info?.city}</h3>
+        <h3>{restaurant?.cards[2]?.card?.card?.info?.avgRating}⭐</h3>
+        <h3>{restaurant?.cards[2]?.card?.card?.info?.costForTwoMessage}</h3>
       </div>
       <div>
         <h1>Menu</h1>
         <ul>
-          {restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards.map(
+          {restaurant?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.carousel.map(
             (value) => (
               <li key={value?.card?.info?.id} className="mb-2">
                 <span className="font-bold">{value?.card?.info?.name}</span> -{" "}
